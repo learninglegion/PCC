@@ -36,17 +36,29 @@
 # print(alien_0)
 
 
-# favorite_languages = {
-#     'jen': 'python',
-#     'sarah': 'C',
-#     'edward': 'ruby',
-#     'phil': 'python',
-# }
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'C',
+    'edward': 'ruby',
+    'phil': 'python',
+}
 # language = favorite_languages['sarah'].title()
 # print(f"Sarah's favorite language is {language}.")
 
-alien_0 = {'color': 'green', 'speed': 'slow'}
-alien_0['x_position'] = 0
-alien_0['y_position'] = 25
-point_value = alien_0.get('points', 'No point value assigned.')
-print(point_value)
+# alien_0 = {'color': 'green', 'speed': 'slow'}
+# alien_0['x_position'] = 0
+# alien_0['y_position'] = 25
+# point_value = alien_0.get('points', 'No point value assigned.')
+# print(point_value)
+
+user_0 = {
+    'username': 'efermi',
+    'first': 'enrico',
+    'last': 'fermi',
+}
+for key, value in user_0.items():
+    print(f"\nKey: {key}")
+    print(f"Value: {value}")
+for key, value in favorite_languages.items():
+    print(f"\nName: {key.title()}")
+    print(f"Language: {value.title()}")
