@@ -27,6 +27,7 @@
 #     'list': 'a modifiable list of values.',
 #     'dictionary': 'a paired key/value list.',
 #     'set': 'a list run through the unique filter.',
+#     'len': 'a method used to print the length of a list, tuple, dictionary, etc.',
 # }
 # for word, definition in programming_words.items():
 #     print(f"{word.title()} is {definition}\n")
