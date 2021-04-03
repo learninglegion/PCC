@@ -122,7 +122,45 @@
 #     print(f"{name.title()}'s favorite places are:")
 #     print(f"{places.title()}.\n")
 
+# people_numbers = {
+#     'stephanie': ['55', '12'],
+#     'dragon': ['7'],
+#     'sean': ['123', '456', '789'],
+#     'patrick': ['1', '4'],
+#     'matt': ['22'],
+# }
+# for name, numbers in people_numbers.items():
+# #    print(f"number length is {len(numbers)}")
+#     if len(numbers) > 1:
+#         print(f"{name.title()}'s favorite numbers are:")
+#         for number in numbers:
+#             print(number)
+#     else:
+#         print(f"{name.title()}'s favorite number is:")
+#         for number in numbers:
+#             print(number)
 
+cities = {
+    'denver': {
+        'country': 'usa',
+        'population': '705,000',
+        'fact': 'capital of colorado',
+    },
+    'cleveland': {
+        'country': 'usa',
+        'population': '385,000',
+        'fact': 'largest performance arts center outside of NYC',
+    },
+    'evansville': {
+        'country': 'usa',
+        'population': '119,000',
+        'fact': "home to the state's first casino, Tropicana",
+    },
+}
+print("Are you ready for some mundane knowledge!?\n")
+for name, info in cities.items():
+    print(f"{name.title()} is a city in the {info['country'].upper()}.")
+    print(f"It has a population of {info['population']} and is the {info['fact']}!\n")
 
 
 
