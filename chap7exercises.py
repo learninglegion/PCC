@@ -48,16 +48,16 @@
 # print(f"Here's a list of your toppings:{toppings}")
 
 #7.5
-prompt = "Welcome to the movies! We charge based on age.\n"
-prompt += "Tell me how old you are and I'll tell you how much a ticket costs.\n"
-age = input(prompt)
-age = int(age)
-if age < 3:
-    print("Babies don't even know what movies are. You get in free!")
-elif age >= 3 and age <= 12:
-    print("Ah, one kids ticket. $10 please.")
-else:
-    print("Thirteen or over I see. Adult tickets are $15.")
+# prompt = "Welcome to the movies! We charge based on age.\n"
+# prompt += "Tell me how old you are and I'll tell you how much a ticket costs.\n"
+# age = input(prompt)
+# age = int(age)
+# if age < 3:
+#     print("Babies don't even know what movies are. You get in free!")
+# elif age >= 3 and age <= 12:
+#     print("Ah, one kids ticket. $10 please.")
+# else:
+#     print("Thirteen or over I see. Adult tickets are $15.")
 
 #7.7 - INFINITE LOOP
 # x = 1
