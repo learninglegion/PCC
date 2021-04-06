@@ -64,6 +64,45 @@
 # while x <3:
 #     print(x)
 
+#7.8
+# sandwich_order = ['reuben','cuban','ham & cheese']
+# finished_sandwiches = []
+# while sandwich_order:
+#     print("Working on a sandwich order...")
+#     current_sandwich = sandwich_order.pop()
+#     print(f"\nFinished a {current_sandwich.title()}. Pick it up!")
+#     finished_sandwiches.append(current_sandwich)
+# print("\nAll the orders are finished! We made the following sandwiches:")
+# for sandwich in finished_sandwiches:
+#     print(sandwich.title())
 
+#7.9
+# sandwich_order = ['reuben','pastrami','cuban','pastrami','ham & cheese','pastrami']
+# finished_sandwiches = []
+# print("Fuck! We are out of Pastrami and it's our best seller!")
+# while 'pastrami' in sandwich_order:
+#     sandwich_order.remove('pastrami')
+#     print("Removed a pastrami order.")
+# while sandwich_order:
+#     print("Working on a sandwich order...")
+#     current_sandwich = sandwich_order.pop()
+#     print(f"\nFinished a {current_sandwich.title()}. Pick it up!")
+#     finished_sandwiches.append(current_sandwich)
+# print("\nAll the orders are finished! We made the following sandwiches:")
+# for sandwich in finished_sandwiches:
+#     print(sandwich.title())
 
-
+#7.10
+dream_vacations = {}
+print("If you could go to one place in the world, where would you go?\n")
+query_active = True
+while query_active:
+    name = input("What is your name? ")
+    vacation = input("Where would you go? ")
+    dream_vacations[name] = vacation
+    persist = input("\nDoes anyone else want to answer (yes/no)? ")
+    if persist == 'no':
+        query_active = False
+print("The results of the poll! Drum roll please...")
+for name, vacation in dream_vacations.items():
+    print(f"{name.title()} wants to go to {vacation.title()}.")
