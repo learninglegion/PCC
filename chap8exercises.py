@@ -59,19 +59,33 @@
 # print(tr)
 
 #8.8
-def make_album(name, album):
-    """Describe a music album."""
-    record = {'artist_name': name.title(), 'artist_album': album.title()}
-    return record
-while True:
-    print("\nName some of your favorite musical artists and albums.")
-    print("(Type 'q' to quit entering info.)\n")
-    given_name = input("First, give me the name of a band or artist: ")
-    if given_name == 'q':
-        break
-    given_album = input("Now give me the name of one of their albums: ")
-    if given_album == 'q':
-        break
-    cd = make_album(given_name, given_album)
-    print(cd)
-    
+# def make_album(name, album):
+#     """Describe a music album."""
+#     record = {'artist_name': name.title(), 'artist_album': album.title()}
+#     return record
+# while True:
+#     print("\nName some of your favorite musical artists and albums.")
+#     print("(Type 'q' to quit entering info.)\n")
+#     given_name = input("First, give me the name of a band or artist: ")
+#     if given_name == 'q':
+#         break
+#     given_album = input("Now give me the name of one of their albums: ")
+#     if given_album == 'q':
+#         break
+#     cd = make_album(given_name, given_album)
+#     print(cd)
+
+#8.9 - 8.10 - 8.11
+messages = ['hi!','whats up?','how are you?']
+sent_messages = []
+def show_messages(message):
+    for message in messages:
+        print(message)
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop()
+        print(current_message)
+        sent_messages.append(current_message)
+send_messages(messages[:], sent_messages)
+print(messages)
+print(sent_messages)
