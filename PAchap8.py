@@ -128,6 +128,41 @@
 # print(user_profile)
 
 #pizza import lesson
-import pizza
+# import pizza
+# pizza.make_pizza(12, 'pepperoni')
+# pizza.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+#
+# ---OR THIS---
+#
+# import pizza as p
+# p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+#
+# ---OR THIS---
+#
+# from pizza import make_pizza
+# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+#
+# ---OR THIS---
+#
+# from pizza import make_pizza as mp
+# mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+#
+# ---OR THIS---
+#
+# from pizza import *
+# make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
 
-pizza.make_pizza(12, 'pepperoni')
+#Styling functions
+#
+#no spaces on either side of = for default
+# def function_name(parameter_0, parameter_1='default value')
+#
+#function uses same convention
+# function_name(value_0, parameter_1='default value')
+#
+#definition lines longer than 79 characters should be broken up
+#and staggered deeper than other functions/loops
+# def function_name(
+    #     parameter_0, parameter_1, parameter_2
+    #     parameter_3, parameter_4, parameter_5):
+    # function body...

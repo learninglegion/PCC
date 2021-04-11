@@ -112,19 +112,29 @@
 # print(user_profile)
 
 #8.14
-def make_car(manufacturer, model, **kwargs):
-    """Store info about a car"""
-    kwargs['car_make'] = manufacturer
-    kwargs['car_model'] = model
-    return kwargs
-car_info = make_car('Toyota', 'MR2',
-                color='red',
-                engine='4 cylinder',
-                brakes='ABS')
-print(car_info)
+# def make_car(manufacturer, model, **kwargs):
+#     """Store info about a car"""
+#     kwargs['car_make'] = manufacturer
+#     kwargs['car_model'] = model
+#     return kwargs
+# car_info = make_car('Toyota', 'MR2',
+#                 color='red',
+#                 engine='4 cylinder',
+#                 brakes='ABS')
+# print(car_info)
 
+#8.15
+# import printing_functions as pf
+# unprinted_designs = ['phone case','robot pendant','dodecahedron']
+# completed_models = []
+# pf.print_models(unprinted_designs[:], completed_models)
+# pf.show_completed_models(completed_models)
+# print(unprinted_designs)
 
-
-
-
+#8.16
+import car_creator
+from car_creator import make_car
+from car_creator import make_car as mc
+import car_creator as cc
+from car_creator import *
 
