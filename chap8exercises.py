@@ -91,10 +91,40 @@
 # print(sent_messages)
 
 #8.12
-def sandwich(*toppings):
-    print("Sandwich order ready. This sandwich has:")
-    for topping in toppings:
-        print(f"- {topping}")
-sandwich('ham')
-sandwich('ham', 'cheese')
-sandwich('ham', 'cheese', 'bacon')
+# def sandwich(*toppings):
+#     print("Sandwich order ready. This sandwich has:")
+#     for topping in toppings:
+#         print(f"- {topping}")
+# sandwich('ham')
+# sandwich('ham', 'cheese')
+# sandwich('ham', 'cheese', 'bacon')
+
+#8.13
+# def build_profile(first, last, **user_info):
+#     """Build a dictionary with everything we know about a user."""
+#     user_info['first_name'] = first
+#     user_info['last_name'] = last
+#     return user_info
+# user_profile = build_profile('brent', 'beckwith',
+#                             location ='aurora',
+#                             field = 'information technology',
+#                             country = 'USA')
+# print(user_profile)
+
+#8.14
+def make_car(manufacturer, model, **kwargs):
+    """Store info about a car"""
+    kwargs['car_make'] = manufacturer
+    kwargs['car_model'] = model
+    return kwargs
+car_info = make_car('Toyota', 'MR2',
+                color='red',
+                engine='4 cylinder',
+                brakes='ABS')
+print(car_info)
+
+
+
+
+
+
