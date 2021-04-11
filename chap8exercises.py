@@ -76,16 +76,25 @@
 #     print(cd)
 
 #8.9 - 8.10 - 8.11
-messages = ['hi!','whats up?','how are you?']
-sent_messages = []
-def show_messages(message):
-    for message in messages:
-        print(message)
-def send_messages(messages, sent_messages):
-    while messages:
-        current_message = messages.pop()
-        print(current_message)
-        sent_messages.append(current_message)
-send_messages(messages[:], sent_messages)
-print(messages)
-print(sent_messages)
+# messages = ['hi!','whats up?','how are you?']
+# sent_messages = []
+# def show_messages(message):
+#     for message in messages:
+#         print(message)
+# def send_messages(messages, sent_messages):
+#     while messages:
+#         current_message = messages.pop()
+#         print(current_message)
+#         sent_messages.append(current_message)
+# send_messages(messages[:], sent_messages)
+# print(messages)
+# print(sent_messages)
+
+#8.12
+def sandwich(*toppings):
+    print("Sandwich order ready. This sandwich has:")
+    for topping in toppings:
+        print(f"- {topping}")
+sandwich('ham')
+sandwich('ham', 'cheese')
+sandwich('ham', 'cheese', 'bacon')
