@@ -196,44 +196,44 @@
 
 #9.9
 #electric car - inheritance
-class Car:
-    """A simple attempt to represent a car."""
-    def __init__(self, make, model, year):
-        """Initialize attributes to describe a car."""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odomoter_reading = 20
+# class Car:
+#     """A simple attempt to represent a car."""
+#     def __init__(self, make, model, year):
+#         """Initialize attributes to describe a car."""
+#         self.make = make
+#         self.model = model
+#         self.year = year
+#         self.odomoter_reading = 20
 
-    def get_descriptive_name(self):
-        """Return a neatly formatted descriptive name."""
-        long_name = f"{self.year} {self.make} {self.model}"
-        return long_name.title()
+#     def get_descriptive_name(self):
+#         """Return a neatly formatted descriptive name."""
+#         long_name = f"{self.year} {self.make} {self.model}"
+#         return long_name.title()
     
-    def read_odometer(self):
-        """Print a statement showing the car's mileage."""
-        print(f"This car has {self.odomoter_reading} miles on it.")
+#     def read_odometer(self):
+#         """Print a statement showing the car's mileage."""
+#         print(f"This car has {self.odomoter_reading} miles on it.")
     
-    def update_odometer(self, mileage):
-        """Set the odomoter reading to the given value.
-        Reject the change if it attempts to roll the odometer back
-        """
-        if mileage >= self.odomoter_reading:
-            self.odomoter_reading = mileage
-        else:
-            print("You can't roll back an odometer!")
+#     def update_odometer(self, mileage):
+#         """Set the odomoter reading to the given value.
+#         Reject the change if it attempts to roll the odometer back
+#         """
+#         if mileage >= self.odomoter_reading:
+#             self.odomoter_reading = mileage
+#         else:
+#             print("You can't roll back an odometer!")
     
-    def increment_odometer(self, miles):
-        """Add the given amount to the odometer reading."""
-        if miles < 0:
-            print("Can't go backwards!")
-        else:
-            self.odomoter_reading += miles
+#     def increment_odometer(self, miles):
+#         """Add the given amount to the odometer reading."""
+#         if miles < 0:
+#             print("Can't go backwards!")
+#         else:
+#             self.odomoter_reading += miles
     
-    def fill_gas_tank(self):
-        """Fill the car gas tank"""
-        long_name = f"{self.year} {self.make} {self.model}"
-        print(f"You've just filled the {long_name.title()}'s gas tank!")
+#     def fill_gas_tank(self):
+#         """Fill the car gas tank"""
+#         long_name = f"{self.year} {self.make} {self.model}"
+#         print(f"You've just filled the {long_name.title()}'s gas tank!")
 
 # my_new_car = Car('audi', 'a4', 2019)
 # print(my_new_car.get_descriptive_name())
@@ -247,55 +247,104 @@ class Car:
 # my_used_car.increment_odometer(-100)
 # my_used_car.read_odometer()
 
-class Battery:
-    """A simple attempt to model a battery for an electric car"""
-    def __init__(self, battery_size=75):
-        """Initialize the battery's attributes."""
-        self.battery_size = battery_size
+# class Battery:
+#     """A simple attempt to model a battery for an electric car"""
+#     def __init__(self, battery_size=75):
+#         """Initialize the battery's attributes."""
+#         self.battery_size = battery_size
 
-    def describe_battery(self):
-        """Print a statement describing battery size"""
-        print(f"This car has a {self.battery_size}-kWh battery.")
+#     def describe_battery(self):
+#         """Print a statement describing battery size"""
+#         print(f"This car has a {self.battery_size}-kWh battery.")
 
-    def get_range(self):
-        """Print a statement about the range this battery provides"""
-        if self.battery_size == 75:
-            range = 260
-        elif self.battery_size == 100:
-            range = 315
-        print(f"This car can go about {range} miles on a full charge.")
+#     def get_range(self):
+#         """Print a statement about the range this battery provides"""
+#         if self.battery_size == 75:
+#             range = 260
+#         elif self.battery_size == 100:
+#             range = 315
+#         print(f"This car can go about {range} miles on a full charge.")
     
-    def upgrade_battery(self):
-        """upgrade battery size to 100 if it isnt already"""
-        print(f"Let's see if we can upgrade this {self.battery_size}-kWh battery.")
-        if self.battery_size < 100:
-            self.battery_size = 100
-            print(f"You were old and busted, now you have a 100-kWh battery!")
-        else:
-            print("You've got the best already, baby!")
+#     def upgrade_battery(self):
+#         """upgrade battery size to 100 if it isnt already"""
+#         print(f"Let's see if we can upgrade this {self.battery_size}-kWh battery.")
+#         if self.battery_size < 100:
+#             self.battery_size = 100
+#             print(f"You were old and busted, now you have a 100-kWh battery!")
+#         else:
+#             print("You've got the best already, baby!")
 
-class ElectricCar(Car):
-    """Represents apects of a car, specific to electric vehicles."""
+# class ElectricCar(Car):
+#     """Represents apects of a car, specific to electric vehicles."""
 
-    def __init__(self, make, model, year):
-        """Initialize attributes of PARENT class.
-        THEN initialize attributes specfic to an electric car"""
-        super().__init__(make, model, year)
-        # self.battery_size = 75 - before battery was made its own class
-        self.battery = Battery() #now the new class is called instead
+#     def __init__(self, make, model, year):
+#         """Initialize attributes of PARENT class.
+#         THEN initialize attributes specfic to an electric car"""
+#         super().__init__(make, model, year)
+#         # self.battery_size = 75 - before battery was made its own class
+#         self.battery = Battery() #now the new class is called instead
 
-    # before battery was made its own class
-    # def describe_battery(self):
-    #     """Print a statement describing battery size"""
-    #     print(f"This car has a {self.battery_size}-kWh battery.")
+#     # before battery was made its own class
+#     # def describe_battery(self):
+#     #     """Print a statement describing battery size"""
+#     #     print(f"This car has a {self.battery_size}-kWh battery.")
 
-    def fill_gas_tank(self):
-        """Fill the car gas tank"""
-        print(f"Electic cars don't have gas tanks!")
+#     def fill_gas_tank(self):
+#         """Fill the car gas tank"""
+#         print(f"Electic cars don't have gas tanks!")
 
-my_tesla = ElectricCar('tesla', 'model s', 2019)
-print(my_tesla.get_descriptive_name())
-my_tesla.battery.describe_battery()
-my_tesla.battery.get_range()
-my_tesla.battery.upgrade_battery()
-my_tesla.battery.get_range()
+# my_tesla = ElectricCar('tesla', 'model s', 2019)
+# print(my_tesla.get_descriptive_name())
+# my_tesla.battery.describe_battery()
+# my_tesla.battery.get_range()
+# my_tesla.battery.upgrade_battery()
+# my_tesla.battery.get_range()
+
+# players = ['charles', 'martina', 'michael', 'florence', 'eli']
+# first_up = choice(players)
+# print(first_up)
+
+#9.13
+from random import randint, choice
+
+# class Die:
+#     """create a d6"""
+#     def __init__(self, sides=6):
+#         self.sides = sides
+
+#     def roll_die(self):
+#         """roll a die and get a result from 1 to 6"""
+#         print(f"The {self.sides} sided die has been rolled and the result is...")
+#         print(randint(1, self.sides))
+    
+#     # def roll_to_value(self):
+#     #     """roll x sided die Y times until Z number appears and return Z"""
+#     #     self.rollcount = rollcount
+#     #     self.target = target
+#     #     sides, target = input("Give me a die size and a number and I'll roll it until\
+#     #     that number shows up and tell you how many rolls it took: ").split()
+#     #     print("How many sides? ", sides)
+#     #     print("Target number?", target)
+        
+#     #     while target != 
+
+# my_die = Die(20)
+# my_die.roll_die()
+
+#---------------------------------------------------
+
+lottery_list = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'a', 'b', 'c', 'd', 'e')
+my_ticket = [3, 6, 'b', 'd']
+winning_numbers = []
+drawing_count = 0
+
+def pull_number_set():
+        for i in (range(4)):
+            winning_numbers.append(choice(lottery_list))
+
+while my_ticket != winning_numbers:
+    winning_numbers = []
+    pull_number_set()
+    drawing_count += 1
+
+print(f"The winning numbers are {winning_numbers} and it took {drawing_count} draws!")
