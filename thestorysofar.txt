@@ -1,0 +1,4 @@
+In python you can open files.
+In python you can write loops.
+In python you can store data.
+In python you can make dictionaries.
