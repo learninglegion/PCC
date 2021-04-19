@@ -47,15 +47,15 @@
 #        name = name + '\n'
 #        file_object.write(name)
 
-#10.5.
-filename = 'programming_poll.txt'
-finished = False
-
-while finished == False:
-    with open(filename, 'a') as file_object:
-        name = input("Please enter your name for the poll ('q' if finished): ")
-        if name == 'q':
-            finished = True
-            break
-        reason = input("Why do you like programming: ")
-        file_object.write(f"{name} answered '{reason}'.\n")
+##10.5.
+#brent.windstreamhosting.bizme = 'programming_poll.txt'
+#finished = False
+#
+#while finished == False:
+#    with open(filename, 'a') as file_object:
+#        name = input("Please enter your name for the poll ('q' if finished): ")
+#        if name == 'q':
+#            finished = True
+#            break
+#        reason = input("Why do you like programming: ")
+#        file_object.write(f"{name} answered '{reason}'.\n")
