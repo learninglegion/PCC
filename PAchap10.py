@@ -52,22 +52,87 @@
 #        print(answer)
 
 
-#alice
-#filename = 'alice.txt'
-filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+##alice
+##filename = 'alice.txt'
+#filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt', 'little_women.txt']
+#
+#def count_words(filename):
+#    """Count the approximate number of words in a file"""
+#    try:
+#        with open(filename, encoding='utf-8') as f:
+#            contents = f.read()
+#    except FileNotFoundError:
+#        #print(f"Sorry, the file {filename} does not exist.")
+#        pass
+#    else:
+#        words = contents.split()
+#        num_words = len(words)
+#        print(f"The file {filename} has {num_words} words in it.")
+#
+#for filename in filenames:
+#    count_words(filename)
 
-def count_words(filename):
-    """Count the approximate number of words in a file"""
+#number_writer/reader
+#
+#import json
+#
+#numbers = [2, 3, 5, 7, 11, 13]
+#filename = 'numbers.json'
+#with open(filename, 'w') as f:
+#    json.dump(numbers, f)
+#
+#filename = 'numbers.json'
+#with open(filename) as f:
+#    numbers = json.load(f)
+#print(numbers)
+
+##remember_me/greet user
+#import json
+##
+##Load the username if it has been stored previously
+##otherwise, prompt for username and store it.
+#filename = 'username.json'
+#try:
+#    with open(filename) as f:
+#        username = json.load(f)
+#except FileNotFoundError:
+#    username = input("What is your name? ")
+#    with open(filename, 'w') as f:
+#        json.dump(username, f)
+#        print(f"We'll remember you when you come back, {username}!")
+#else:
+#    print(f"Welcome back, {username}!")
+#
+
+#remember_me/greet user REFACTORED
+import json
+
+def get_stored_username():
+    """Get stored username if available"""
+    filename = 'username.json'
     try:
-        with open(filename, encoding='utf-8') as f:
-            contents = f.read()
+        with open(filename) as f:
+            username = json.load(f)
     except FileNotFoundError:
-        #print(f"Sorry, the file {filename} does not exist.")
-        pass
+        return None
     else:
-        words = contents.split()
-        num_words = len(words)
-        print(f"The file {filename} has {num_words} words in it.")
+        return username
 
-for filename in filenames:
-    count_words(filename)
+def get_new_username():
+    """Prompt for a new username"""
+    filename = 'username.json'
+    username = input("What is your name? ")
+    with open(filename, 'w') as f:
+        json.dump(username, f)
+    return username
+
+def greet_user():
+    """Greet the user by name"""
+    username = get_stored_username()
+    if username:
+        print(f"Welcome back, {username}!")
+    else:
+        username = get_new_username()
+        print(f"We'll remember you when you come back, {username}!")
+
+greet_user()

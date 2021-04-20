@@ -87,18 +87,18 @@
 #        #print(f"I could not find {filename}.")
 #        pass
 
-#10.10
-filename = 'huckfinn.txt'
-
-print("Let's search for words in a book.")
-searchword = input("Give me a word to search for: ")
-searchword_count = 0
-
-with open(filename, encoding='utf-8') as f:
-    #contents = f.read()
-    #words = contents.split()
-    #num_words = len(words)
-    #print(f"The file {filename} has {num_words} words in it.")
-    for line in f:
-        searchword_count += line.lower().count(f'{searchword}')
-print(f"The file {filename} has {searchword_count} '{searchword}'s in it.")
+##10.10
+#filename = 'huckfinn.txt'
+#
+#print("Let's search for words in a book.")
+#searchword = input("Give me a word to search for: ")
+#searchword_count = 0
+#
+#with open(filename, encoding='utf-8') as f:
+#    #contents = f.read()
+#    #words = contents.split()
+#    #num_words = len(words)
+#    #print(f"The file {filename} has {num_words} words in it.")
+#    for line in f:
+#        searchword_count += line.lower().count(f'{searchword}')
+#print(f"The file {filename} has {searchword_count} '{searchword}'s in it.")
