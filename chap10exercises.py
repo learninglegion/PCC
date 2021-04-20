@@ -59,3 +59,46 @@
 #            break
 #        reason = input("Why do you like programming: ")
 #        file_object.write(f"{name} answered '{reason}'.\n")
+
+##10.6 and 10.7
+#print("Give me two numbers and I'll add them.")
+#print("Type 'q' to quit.")
+#while True:
+#    first_number = input("First number: ")
+#    if first_number == 'q':
+#        break
+#    second_number = input("Second number: ")
+#    if second_number == 'q':
+#        break
+#    try:
+#        print(int(first_number) + int(second_number))
+#    except ValueError:
+#        print("Numbers only please.")
+
+##10.8 and 10.9
+#filenames = ['cats.txt', 'dogs.txt']
+#
+#for filename in filenames:
+#    try:
+#        with open(filename) as f:
+#            for line in f:
+#                print(line.title().rstrip())
+#    except FileNotFoundError:
+#        #print(f"I could not find {filename}.")
+#        pass
+
+#10.10
+filename = 'huckfinn.txt'
+
+print("Let's search for words in a book.")
+searchword = input("Give me a word to search for: ")
+searchword_count = 0
+
+with open(filename, encoding='utf-8') as f:
+    #contents = f.read()
+    #words = contents.split()
+    #num_words = len(words)
+    #print(f"The file {filename} has {num_words} words in it.")
+    for line in f:
+        searchword_count += line.lower().count(f'{searchword}')
+print(f"The file {filename} has {searchword_count} '{searchword}'s in it.")
