@@ -175,9 +175,13 @@ def greet_user():
     username = get_stored_username()
     if username:
         if check_user() == True:
-            print(f"Welcome back, {username}!")
+            print(f"Welcome back, {username.title()}!")
         else:
+            print("You need your own username.")
             username = get_new_username()
-            print(f"We'll remember you when you come back, {username.title()}!")
+
+    else:
+        username = get_new_username()
+        print(f"We'll remember you when you come back, {username.title()}!")
 
 greet_user()
