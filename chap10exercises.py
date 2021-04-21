@@ -102,3 +102,82 @@
 #    for line in f:
 #        searchword_count += line.lower().count(f'{searchword}')
 #print(f"The file {filename} has {searchword_count} '{searchword}'s in it.")
+
+#10.11 and 10.12
+#import json
+#
+#def get_stored_number():
+#    """Say favorite number"""
+#    filename = 'favnum.json'
+#    try:
+#        with open(filename) as f:
+#            favnum = json.load(f)
+#    except FileNotFoundError:
+#        return None
+#    else:
+#        return favnum
+#
+#def get_new_number():
+#    """Ask for favorite number"""
+#    filename = 'favnum.json'
+#    favnum = input("What is your favorite number? ")
+#    with open(filename, 'w') as f:
+#        json.dump(favnum, f)
+#    return favnum
+#
+#def favorite_number():
+#    """Ask for favorite number if we don't know it."""
+#    favnum = get_stored_number()
+#    if favnum:
+#        print(f"I know your favorite number, it's {favnum}!")
+#    else:
+#        favnum = get_new_number()
+#
+#favorite_number()
+
+#10.13
+import json
+
+def get_stored_username():
+    """Get stored username if available"""
+    filename = 'username.json'
+    try:
+        with open(filename) as f:
+            username = json.load(f)
+    except FileNotFoundError:
+        return None
+    else:
+        return username
+
+def get_new_username():
+    """Prompt for a new username"""
+    filename = 'username.json'
+    username = input("What is your name? ")
+    with open(filename, 'w') as f:
+        json.dump(username, f)
+    return username
+
+def check_user():
+    username = get_stored_username()
+    answer = ''
+    print(f"Is {username} your username?")
+    while answer != 'y' or answer != 'n':
+        answer = input("Type 'y' or 'n' to answer: ")
+        if answer.lower() == 'y':
+            return True
+        elif answer.lower() == 'n':
+            return False
+        else:
+            print("Answer 'y' or 'n' please.")
+
+def greet_user():
+    """Greet the user by name"""
+    username = get_stored_username()
+    if username:
+        if check_user() == True:
+            print(f"Welcome back, {username}!")
+        else:
+            username = get_new_username()
+            print(f"We'll remember you when you come back, {username.title()}!")
+
+greet_user()
